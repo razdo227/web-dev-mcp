@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "fullstack_webdev": {
+      "command": "python3",
+      "args": [
+        "/Users/avadhootkolee/Development/web-dev-mcp/fullstack_webdev_server.py"
+      ]
+    }
+  }
+}
