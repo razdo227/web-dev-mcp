@@ -6,9 +6,10 @@ A Model Context Protocol (MCP) server that delivers curated documentation, quick
 
 - **Tool Catalog** - Browse 20+ curated web development tools organized by category (runtimes, frameworks, UI libraries, databases, deployment platforms, etc.)
 - **Documentation Lookup** - Fetch official docs, summaries, and CLI install commands for any tool in the catalog
-- **Framework Quickstart** - Get ready-to-run scaffold commands for Next.js, SvelteKit, Remix, and Nuxt across npm, pnpm, yarn, and bun
+- **Framework Quickstart** - Get ready-to-run scaffold commands for Next.js, SvelteKit, Vue.js, Remix, and Nuxt across npm, pnpm, yarn, and bun
 - **Stack Recommendations** - Receive opinionated full-stack combinations tailored to your project type, experience level, and realtime requirements
 - **Deployment Checklists** - Get step-by-step deployment guides for Vercel, Netlify, and Cloudflare Pages
+- **Design Knowledge Catalog** - Explore curated references for color theory, typography, brand psychology, and design systems
 
 ## Available Tools
 
@@ -19,6 +20,7 @@ The server exposes the following MCP tools:
 - `framework_quickstart` - Generate starter commands for a framework with your preferred package manager
 - `recommend_stack` - Get a personalized stack recommendation based on project description
 - `deployment_checklist` - Get deployment steps and notes for a hosting provider
+- `design_knowledge_sources` - Review curated design references or search for color, typography, and branding resources
 
 ## Prerequisites
 
@@ -176,7 +178,7 @@ No API keys or secrets are required.
 Node.js, Deno, Bun, npm, pnpm
 
 ### App Frameworks
-Next.js, SvelteKit, Remix, Nuxt
+Next.js, SvelteKit, Vue.js, Remix, Nuxt
 
 ### UI Libraries & Styling
 Tailwind CSS, shadcn/ui

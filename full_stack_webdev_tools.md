@@ -17,7 +17,8 @@ This list compiles modern full-stack web development tools for creating professi
 ## ⚙️ App Frameworks (SSR/SSG, Routing, Data)
 - [Next.js](https://nextjs.org/docs/app/getting-started)
 - [SvelteKit](https://svelte.dev/docs)
-- [Nuxt](https://nuxt.com)
+- [Vue.js](https://vuejs.org/guide/quick-start)
+- [Nuxt](https://nuxt.com/docs/4.x/getting-started/introduction)
 - [Remix](https://remix.run/docs)
 - [SolidStart](https://docs.solidjs.com)
 

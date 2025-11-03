@@ -95,6 +95,15 @@ RAW_TOOL_DATA = [
         "cli": ["npm create svelte@latest my-app"],
     },
     {
+        "key": "Vue.js",
+        "aliases": ["vue"],
+        "label": "Vue.js",
+        "category": "App Frameworks",
+        "homepage": "https://vuejs.org/guide/quick-start",
+        "summary": "Progressive framework for building UIs with a component model and reactive core.",
+        "cli": ["npm create vue@latest my-app"],
+    },
+    {
         "key": "Remix",
         "aliases": [],
         "label": "Remix",
@@ -104,6 +113,15 @@ RAW_TOOL_DATA = [
         "cli": ["npx create-remix@latest"],
     },
     {
+        "key": "Nuxt",
+        "aliases": ["nuxt", "nuxt.js"],
+        "label": "Nuxt",
+        "category": "App Frameworks",
+        "homepage": "https://nuxt.com/docs/4.x/getting-started/introduction",
+        "summary": "Vue-powered app framework for hybrid rendering, server routes, and edge-ready deployments.",
+        "cli": ["npx nuxi@latest init my-app"],
+    },
+    {
         "key": "Tailwind CSS",
         "aliases": ["tailwind"],
         "label": "Tailwind CSS",
@@ -111,6 +129,15 @@ RAW_TOOL_DATA = [
         "homepage": "https://tailwindcss.com/docs",
         "summary": "Utility-first CSS framework with design system friendly primitives.",
         "cli": ["npm install -D tailwindcss postcss autoprefixer"],
+    },
+    {
+        "key": "Sass",
+        "aliases": ["scss", "sass"],
+        "label": "Sass / SCSS",
+        "category": "UI Libraries & Styling",
+        "homepage": "https://sass-lang.com/documentation/",
+        "summary": "Mature CSS extension language adding variables, nesting, mixins, and modular architecture patterns.",
+        "cli": ["npm install -D sass"],
     },
     {
         "key": "shadcn/ui",
@@ -282,6 +309,21 @@ FRAMEWORK_STARTERS = {
             "npm run dev -- --open",
         ],
     },
+    "vue.js": {
+        "label": "Vue.js",
+        "docs": "https://vuejs.org/guide/quick-start",
+        "commands": {
+            "npm": "npm create vue@latest my-app",
+            "pnpm": "pnpm dlx create-vue@latest my-app",
+            "yarn": "yarn create vue my-app",
+            "bun": "bunx create-vue@latest my-app",
+        },
+        "post": [
+            "cd my-app",
+            "npm install",
+            "npm run dev -- --open",
+        ],
+    },
     "remix": {
         "label": "Remix",
         "docs": "https://remix.run/docs/en/main/start/quickstart",
@@ -298,7 +340,7 @@ FRAMEWORK_STARTERS = {
     },
     "nuxt": {
         "label": "Nuxt",
-        "docs": "https://nuxt.com/docs/getting-started/installation",
+        "docs": "https://nuxt.com/docs/4.x/getting-started/introduction",
         "commands": {
             "npm": "npx nuxi@latest init my-app",
             "pnpm": "pnpm dlx nuxi@latest init my-app",
@@ -312,6 +354,9 @@ FRAMEWORK_STARTERS = {
         ],
     },
 }
+
+FRAMEWORK_STARTERS["vue"] = FRAMEWORK_STARTERS["vue.js"]
+FRAMEWORK_STARTERS["nuxt.js"] = FRAMEWORK_STARTERS["nuxt"]
 
 DEPLOYMENT_PLAYBOOKS = {
     "vercel": {
@@ -399,6 +444,152 @@ STACK_RECIPES = [
         "extras": ["Use Auth.js for customer sessions", "Add LogRocket for session replay"],
     },
 ]
+
+DESIGN_KNOWLEDGE_DATA = [
+    {
+        "key": "color-theory-harmony",
+        "label": "Color Theory & Harmony",
+        "aliases": ["color theory", "harmony"],
+        "summary": "Foundational texts exploring classical color wheels, contrasts, and harmony principles.",
+        "items": [
+            {"label": "Johannes Itten — The Art of Color", "url": "https://www.designersreviewofbooks.com/2010/05/the-art-of-color-johannes-itten/"},
+            {"label": "Josef Albers — Interaction of Color", "url": "https://yalebooks.yale.edu/book/9780300179354/interaction-of-color/"},
+            {"label": "Faber Birren — Principles of Color", "url": "https://archive.org/details/principlesofcolo0000birr"},
+            {"label": "Kandinsky — Concerning the Spiritual in Art", "url": "https://archive.org/details/concerningthesp030082mbp"},
+        ],
+    },
+    {
+        "key": "modern-applied-color",
+        "label": "Modern Applied Color",
+        "aliases": ["applied color", "modern color"],
+        "summary": "Contemporary color palette generators, trend reports, and design inspiration tools.",
+        "items": [
+            {"label": "Adobe Color Guide", "url": "https://color.adobe.com/create/color-wheel"},
+            {"label": "Pantone Color Trends", "url": "https://www.pantone.com/color-intelligence"},
+            {"label": "AIGA Color Theory Articles", "url": "https://www.aiga.org/ideas"},
+            {"label": "Coolors", "url": "https://coolors.co"},
+            {"label": "Color Hunt", "url": "https://colorhunt.co"},
+        ],
+    },
+    {
+        "key": "color-systems-accessibility",
+        "label": "Color Systems & Accessibility",
+        "aliases": ["color systems", "accessibility", "contrast"],
+        "summary": "Specifications and references for color spaces, contrast, and accessibility compliance.",
+        "items": [
+            {"label": "W3C CSS Color Module Level 4", "url": "https://www.w3.org/TR/css-color-4/"},
+            {"label": "WCAG 2.2 Accessibility Guidelines", "url": "https://www.w3.org/WAI/WCAG22/quickref/"},
+            {"label": "CIE Color Models (LAB, LCH)", "url": "https://cie.co.at"},
+            {"label": "Bruce Lindbloom Color Science Notes", "url": "https://brucelindbloom.com/"},
+            {"label": "Color.js Docs", "url": "https://colorjs.io/"},
+            {"label": "Chroma.js Docs", "url": "https://gka.github.io/chroma.js/"},
+            {"label": "MIT OpenCourseWare — Color Science", "url": "https://ocw.mit.edu/courses/4-205-analysis-of-contemporary-architecture-color-theory-fall-2009/pages/color-theory/"},
+        ],
+    },
+    {
+        "key": "datasets-token-systems",
+        "label": "Datasets & Token Systems",
+        "aliases": ["color datasets", "design tokens"],
+        "summary": "Open datasets and token libraries for design system color palettes and naming.",
+        "items": [
+            {"label": "XKCD Color Survey", "url": "https://xkcd.com/color/rgb/"},
+            {"label": "Tailwind CSS Colors", "url": "https://tailwindcss.com/docs/customizing-colors"},
+            {"label": "Material Design Color Tokens", "url": "https://m3.material.io/styles/color/overview"},
+            {"label": "Open Color", "url": "https://yeun.github.io/open-color/"},
+            {"label": "ColorBrewer", "url": "https://colorbrewer2.org/"},
+        ],
+    },
+    {
+        "key": "typography-layout",
+        "label": "Typography & Layout",
+        "aliases": ["typography", "layout"],
+        "summary": "Seminal works covering typographic fundamentals, composition, and layout theory.",
+        "items": [
+            {"label": "Robert Bringhurst — The Elements of Typographic Style", "url": "https://typographyforlawyers.com/elements-of-typographic-style.html"},
+            {"label": "Ellen Lupton — Thinking with Type", "url": "https://thinkingwithtype.com"},
+            {"label": "Jan Tschichold — The New Typography", "url": "https://monoskop.org/images/5/5c/Tschichold_Jan_The_New_Typography_1995.pdf"},
+        ],
+    },
+    {
+        "key": "technical-web-typography",
+        "label": "Technical & Web Typography",
+        "aliases": ["web typography", "css typography"],
+        "summary": "Standards and practical references for implementing typography on the web.",
+        "items": [
+            {"label": "W3C Web Typography", "url": "https://www.w3.org/TR/css-fonts-4/"},
+            {"label": "CSS Typography Module", "url": "https://drafts.csswg.org/css-fonts/"},
+            {"label": "Google Fonts Knowledge", "url": "https://fonts.google.com/knowledge"},
+        ],
+    },
+    {
+        "key": "design-system-typography",
+        "label": "Design System Typography Guides",
+        "aliases": ["system typography", "typography guides"],
+        "summary": "Official typography guidance from major platform design systems.",
+        "items": [
+            {"label": "Apple HIG — Typography", "url": "https://developer.apple.com/design/human-interface-guidelines/foundations/typography/"},
+            {"label": "Material Design Typography", "url": "https://m3.material.io/styles/typography"},
+            {"label": "IBM Carbon Type System", "url": "https://carbondesignsystem.com/guidelines/typography/overview/"},
+        ],
+    },
+    {
+        "key": "brand-psychology-theory",
+        "label": "Brand Psychology & Theory",
+        "aliases": ["brand psychology", "branding theory"],
+        "summary": "Research-backed frameworks exploring perception, symbolism, and emotional design.",
+        "items": [
+            {"label": "Carl Jung — Man and His Symbols", "url": "https://archive.org/details/manhissymbols00carl"},
+            {"label": "Donald Norman — Emotional Design", "url": "https://jnd.org/books/emotional-design/"},
+            {"label": "Philip Kotler — Principles of Marketing", "url": "https://www.pearson.com/en-us/subject-catalog/p/principles-of-marketing/P200000003433"},
+            {"label": "Faber Birren — Color Psychology and Color Therapy", "url": "https://archive.org/details/colorpsychologyc00birr"},
+            {"label": "AIC Colour Congress Papers", "url": "https://aic-color.org/conference-proceedings"},
+        ],
+    },
+    {
+        "key": "brand-identity-strategy",
+        "label": "Brand & Identity Strategy",
+        "aliases": ["brand strategy", "identity strategy"],
+        "summary": "Playbooks for defining and scaling brand identity systems and storytelling.",
+        "items": [
+            {"label": "Marty Neumeier — The Brand Gap / Brand Flip", "url": "https://www.martyneumeier.com/books"},
+            {"label": "StoryBrand Framework", "url": "https://storybrand.com/"},
+            {"label": "Harvard Business Review — Branding", "url": "https://hbr.org/topic/branding"},
+        ],
+    },
+    {
+        "key": "major-design-systems",
+        "label": "Major Design Systems",
+        "aliases": ["design systems", "system references"],
+        "summary": "Reference implementations of comprehensive design systems and guidelines.",
+        "items": [
+            {"label": "Google Material 3", "url": "https://m3.material.io/"},
+            {"label": "Apple Human Interface Guidelines", "url": "https://developer.apple.com/design/human-interface-guidelines/"},
+            {"label": "Shopify Polaris", "url": "https://polaris.shopify.com/"},
+            {"label": "IBM Carbon", "url": "https://carbondesignsystem.com/"},
+            {"label": "Atlassian Design System", "url": "https://atlassian.design/"},
+            {"label": "Stripe Brand Guidelines", "url": "https://stripe.com/brand"},
+            {"label": "Spotify Design", "url": "https://spotify.design/"},
+        ],
+    },
+    {
+        "key": "public-brand-visual-data",
+        "label": "Public Brand & Visual Data",
+        "aliases": ["brand datasets", "visual data"],
+        "summary": "Datasets and community resources for brand assets, fonts, and design tokens.",
+        "items": [
+            {"label": "Figma Community Design Tokens", "url": "https://www.figma.com/community/search?resource_type=design_system"},
+            {"label": "Google Fonts Dataset", "url": "https://developers.google.com/fonts/docs/developer_api"},
+            {"label": "Wikidata Color Categories", "url": "https://www.wikidata.org/wiki/Q1075"},
+        ],
+    },
+]
+
+DESIGN_KNOWLEDGE_INDEX = {}
+for entry in DESIGN_KNOWLEDGE_DATA:
+    normalized_key = _normalize_key(entry["key"])
+    DESIGN_KNOWLEDGE_INDEX[normalized_key] = entry
+    for alias in entry.get("aliases", []):
+        DESIGN_KNOWLEDGE_INDEX[_normalize_key(alias)] = entry
 
 
 def _format_timestamp() -> str:
@@ -562,6 +753,55 @@ Steps:
 Notes:
 {notes}{preview_hint}"""
 
+
+@mcp.tool()
+async def design_knowledge_sources(category: str = "", search: str = "") -> str:
+    """Return curated design knowledge references covering color, typography, brands, and systems."""
+    logger.info("Fetching design knowledge sources category=%s search=%s", category, search)
+    normalized_category = _normalize_key(category) if category.strip() else ""
+    normalized_search = search.strip().lower()
+
+    if normalized_search:
+        matches = []
+        for entry in DESIGN_KNOWLEDGE_DATA:
+            for item in entry["items"]:
+                label_lower = item["label"].lower()
+                if normalized_search in label_lower:
+                    matches.append((entry["label"], item))
+                    continue
+        if not matches:
+            return f"❌ No sources matched search '{search}'."
+        lines = [
+            f"- {item['label']} ({category_label}) → {item['url']}"
+            for category_label, item in matches
+        ]
+        joined = "\n".join(lines)
+        return f"""🧠 Design Knowledge Search Results
+Query: {search}
+Sources:
+{joined}"""
+
+    if normalized_category:
+        entry = DESIGN_KNOWLEDGE_INDEX.get(normalized_category)
+        if not entry:
+            available = ", ".join(sorted(e["label"] for e in DESIGN_KNOWLEDGE_DATA))
+            return f"❌ Unknown category '{category}'. Available categories: {available}."
+        lines = [f"- {item['label']} → {item['url']}" for item in entry["items"]]
+        content = "\n".join(lines)
+        return f"""🧠 {entry['label']}
+Summary: {entry['summary']}
+Sources:
+{content}"""
+
+    overview = "\n".join(
+        f"- {entry['label']} ({len(entry['items'])} sources)" for entry in DESIGN_KNOWLEDGE_DATA
+    )
+    return f"""🧠 Design Knowledge Catalog
+Scope: Comprehensive references for color theory, typography, brand psychology, and design systems.
+Categories:
+{overview}
+
+Tip: Pass category=\"color theory\" or search=\"typography\" to drill down."""
 
 if __name__ == "__main__":
     logger.info("Starting Full Stack Web Dev MCP server...")
